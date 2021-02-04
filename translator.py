@@ -10,7 +10,8 @@ def englishtofrench(text):
         authenticator=authenticator
     )
     language_translator.set_service_url('https://api.us-south.language-translator.watson.cloud.ibm.com/instances/228de068-98ee-4082-b7eb-ff67af934117')
-
+    if text is None or text == '':
+        return 'Input is empty'
     translation = language_translator.translate(
         text=text,
         model_id='en-fr').get_result()

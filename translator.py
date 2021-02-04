@@ -13,7 +13,7 @@ def englishtofrench(text):
     """
     English to French
     """
-    authenticator = IAMAuthenticator('Oeym1JfKdcTcCp2lCQ5YH24CAC0Oa2FXdZFyP2ZFVL1Z')
+    authenticator = IAMAuthenticator('')
     language_translator = LanguageTranslatorV3(
         version='2018-05-01',
         authenticator=authenticator
@@ -31,7 +31,7 @@ def englishtogerman(text):
     """
     English to German
     """
-    authenticator = IAMAuthenticator('Oeym1JfKdcTcCp2lCQ5YH24CAC0Oa2FXdZFyP2ZFVL1Z')
+    authenticator = IAMAuthenticator('')
     language_translator = LanguageTranslatorV3(
         version='2018-05-01',
         authenticator=authenticator

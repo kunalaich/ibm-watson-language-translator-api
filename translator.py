@@ -18,6 +18,24 @@ def englishtofrench(text):
     french = translation["translations"][0]["translation"]
     return french
 
+def englishtogerman(text):
+    authenticator = IAMAuthenticator('Oeym1JfKdcTcCp2lCQ5YH24CAC0Oa2FXdZFyP2ZFVL1Z')
+    language_translator = LanguageTranslatorV3(
+        version='2018-05-01',
+        authenticator=authenticator
+    )
+    language_translator.set_service_url('https://api.us-south.language-translator.watson.cloud.ibm.com/instances/228de068-98ee-4082-b7eb-ff67af934117')
+    if text is None or text == '':
+        return 'Input is empty'
+    translation = language_translator.translate(
+        text=text,
+        model_id='en-de').get_result()
+    german = translation["translations"][0]["translation"]
+    return german
+
 if __name__ == "__main__":
-    french = englishtofrench('Hello, how are you today?')
+    french = englishtofrench('Hello')
     print(french)
+    german = englishtogerman('Hello')
+    print(german)
+    
